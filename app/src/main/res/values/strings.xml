@@ -4,4 +4,5 @@
     <string name="dialog_not_supported_message">This device doesn\'t have flash</string>
     <string name="dialog_not_supported_button">Exit</string>
     <string name="flashlight_button">Flashlight button</string>
+    <string name="banner_ad_id">ca-app-pub-6017664044356833/1723684202</string>
 </resources>
