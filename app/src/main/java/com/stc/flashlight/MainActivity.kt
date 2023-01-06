@@ -1,9 +1,6 @@
 package com.stc.flashlight
 
-import android.content.Context
 import android.content.pm.PackageManager
-import android.hardware.Camera
-import android.hardware.Camera.getCameraInfo
 import android.hardware.camera2.CameraCharacteristics
 import android.hardware.camera2.CameraManager
 import android.hardware.camera2.CameraManager.TorchCallback
@@ -16,8 +13,8 @@ import android.widget.SeekBar
 import android.widget.SeekBar.GONE
 import android.widget.SeekBar.OnSeekBarChangeListener
 import androidx.annotation.RequiresApi
-import androidx.core.content.getSystemService
-import androidx.core.util.LogWriter
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.system.exitProcess
 
@@ -30,6 +27,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        MobileAds.initialize(this) {}
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
 
         if (!doesDeviceHaveFlash()) {
             setContentView(View(this))
