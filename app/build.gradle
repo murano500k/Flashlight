@@ -5,6 +5,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('/home/aradchenko/projects/keystoreForMyApps/flashlight.jks')
+            storePassword ANDROID_STORE_PASSWORD
+            keyAlias 'flashlightkey'
+            keyPassword ANDROID_KEY_PASSWORD
+        }
+    }
     namespace 'com.stc.flashlight'
     compileSdk 33
 
@@ -16,9 +24,13 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
