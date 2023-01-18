@@ -1,6 +1,6 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources >
     <!-- Base application theme. -->
-    <style name="Theme.Flashlight" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="Theme.Flashlight" parent="Theme.Material3.Dark">
         <!-- Primary brand color. -->
 
         <!-- Customize your theme here. -->
